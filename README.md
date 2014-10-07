@@ -22,5 +22,5 @@ zope.interface (https://pypi.python.org/pypi/zope.interface#download)<br>
 
 
 <pre><code>
-    $ pip install -r requirements.txt
+$ pip install -r requirements.txt
 </code></pre>
