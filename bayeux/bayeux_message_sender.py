@@ -32,6 +32,13 @@ class BayeuxMessageSender(object):
         self.msg_id = 0
         self.server = server
         self.receiver = receiver
+        self.headers = {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Host': self.server,
+        }
+
+    def add_header(self, header_name, header_value):
+        self.headers[header_name] = header_value
 
     def connect(self, errback=None):
         """Sends a connect request message to the server
@@ -95,10 +102,10 @@ class BayeuxMessageSender(object):
                 during sending.
         """
         def do_send():
+            h = dict([ (k,[v]) for k,v in self.headers.items() ])
             d = self.agent.request('POST',
                 self.server,
-                Headers({'Content-Type': ['application/x-www-form-urlencoded'],
-                    'Host': [self.server]}),
+                Headers(h),
                 BayeuxProducer(str(message)))
 
             def cb(response):
