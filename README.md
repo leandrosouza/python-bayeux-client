@@ -19,3 +19,8 @@ Dependencies
 ============
 Twisted (http://twistedmatrix.com/trac/)<br>
 zope.interface (https://pypi.python.org/pypi/zope.interface#download)<br>
+
+
+.. code-block:: bash
+
+    $ pip install -r requirements.txt
