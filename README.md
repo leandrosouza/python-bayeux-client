@@ -21,6 +21,6 @@ Twisted (http://twistedmatrix.com/trac/)<br>
 zope.interface (https://pypi.python.org/pypi/zope.interface#download)<br>
 
 
-.. code-block:: bash
-
+<pre><code>
     $ pip install -r requirements.txt
+</code></pre>
