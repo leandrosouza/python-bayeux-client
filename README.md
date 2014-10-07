@@ -11,8 +11,7 @@ from bayeux.bayeux_client import BayeuxClient
 def cb(data):
   print(data)
 bc = BayeuxClient('http://localhost:8080/cometd')
-bc.register('/foo/bar', cb)
-bc.register('/foo/baz', cb)
+bc.register('channel/foo/bar', cb)
 bc.start()
 </code></pre>
 
